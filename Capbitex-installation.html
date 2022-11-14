@@ -1,0 +1,849 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="images/favicon-doc.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.3">
+    
+    
+      
+        <title>Capbitex Installation - Capbitex Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Capbitex Documentation" class="md-header-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Capbitex Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Capbitex Installation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Capbitex Documentation" class="md-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    Capbitex Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="server-installation.html" title="Server Installation" class="md-nav__link">
+      Server Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Capbitex Installation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="Capbitex-installation.html" title="Capbitex Installation" class="md-nav__link md-nav__link--active">
+      Capbitex Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-credentials" class="md-nav__link">
+    Required Credentials
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-Capbitex" class="md-nav__link">
+    Installing Capbitex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-permissions" class="md-nav__link">
+    Directory Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-configuration" class="md-nav__link">
+    Nginx Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    Environment Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-application-key" class="md-nav__link">
+    Generate Application Key
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate Application Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-migration" class="md-nav__link">
+    Database Migration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-initial-data" class="md-nav__link">
+    Install initial Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superadmin-user-creation" class="md-nav__link">
+    Superadmin User Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-symbolic-link-for-storage" class="md-nav__link">
+    Create Symbolic Link For Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data-seeding" class="md-nav__link">
+    Test Data Seeding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-Capbitex-dev-dependencies" class="md-nav__link">
+    Remove Capbitex Dev Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-javascript-dependencies" class="md-nav__link">
+    Installing JavaScript Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="broadcast.html" title="Broadcast Configuration" class="md-nav__link">
+      Broadcast Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="horizon.html" title="Horizon Configuration" class="md-nav__link">
+      Horizon Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="coinpayment.html" title="Coinpayments Setting" class="md-nav__link">
+      Coinpayments Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="btc.html" title="BTC Forked Setting" class="md-nav__link">
+      BTC Forked Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="eth-settings.html" title="Ethereum Settings" class="md-nav__link">
+      Ethereum Settings
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="ethereum.html" title="Ethereum Note Setup" class="md-nav__link">
+      Ethereum Note Setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="erc20.html" title="ERC20 Setting" class="md-nav__link">
+      ERC20 Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="omnilayer.html" title="Omni Layer Setting" class="md-nav__link">
+      Omni Layer Setting
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-credentials" class="md-nav__link">
+    Required Credentials
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-Capbitex" class="md-nav__link">
+    Installing Capbitex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-permissions" class="md-nav__link">
+    Directory Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-configuration" class="md-nav__link">
+    Nginx Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    Environment Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-application-key" class="md-nav__link">
+    Generate Application Key
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate Application Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-migration" class="md-nav__link">
+    Database Migration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-initial-data" class="md-nav__link">
+    Install initial Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superadmin-user-creation" class="md-nav__link">
+    Superadmin User Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-symbolic-link-for-storage" class="md-nav__link">
+    Create Symbolic Link For Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data-seeding" class="md-nav__link">
+    Test Data Seeding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-Capbitex-dev-dependencies" class="md-nav__link">
+    Remove Capbitex Dev Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-javascript-dependencies" class="md-nav__link">
+    Installing JavaScript Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="installation-process"><strong>Installation Process</strong></h1>
+<h2 id="required-credentials">Required Credentials</h2>
+<ul>
+<li>Pusher Credentials for live data <a href="https://pusher.com/" target="_blank">Get Pusher Credential</a> (Required when <code>BROADCAST_DRIVER</code> is pusher)</li>
+<li>SMTP Mail Server Credentials <a href="https://www.mailgun.com/">Mailgun</a> </li>
+<li>Database Credentials</li>
+<li>Redis Server Credentials </li>
+</ul>
+<p>Capbitex is made on Laravel and the installation system is same as Laravel. <a href="https://laravel.com/docs/installation" target="_blank">See Laravel Installation Guide</a></p>
+<p><strong>Note: Before installing Capbitex make sure all required software and PHP extensions are installed properly.</strong></p>
+<h3 id="installing-Capbitex">Installing Capbitex</h3>
+<p>Capbitex utilizes Composer to manage its dependencies. So, before using Capbitex, make sure you have Composer installed on your machine. To check you have correctly installed composer run <code>composer --version</code> to your server terminal. </p>
+<p>If you are not install composer yet then run <code>sudo apt install -y composer</code> to install composer.</p>
+<p>Unzip Capbitex project and put it into your server directory (For linux the server directory is <code>/var/www/html</code>).
+After this go to your project directory and run <code>composer install</code> to download all the dependency.</p>
+<h3 id="directory-permissions">Directory Permissions</h3>
+<p>After composer install, you may need to give some directory permissions. Directories within the <code>storage</code> ,<code>bootstrap/cache</code> and <code>resources/lang</code> directories should be writable by your web server or Capbitex will not run.</p>
+<p>Example (for ubuntu. may vary for other linux distributions):</p>
+<pre><code>sudo chown -R www-data:www-data bootstrap/cache
+sudo chown -R www-data:www-data storage
+sudo chown -R www-data:www-data resources/lang
+</code></pre>
+
+<h3 id="nginx-configuration">Nginx Configuration</h3>
+<p>The default nginx configuration is not suitable for Capbitex. So you need to configure it. Open <code>/etc/nginx/sites-available/default</code> file with your favorite editor. Here we use <code>vim</code>. If <code>vim</code> is not install then run <code>sudo apt install vim</code> command or use <code>vi</code> instead of <code>vim</code>.</p>
+<p>To open run the following command: </p>
+<pre><code>sudo vim /etc/nginx/sites-available/default
+</code></pre>
+
+<p>Remove all from that file and copy &amp; paste the following configuration.</p>
+<pre><code>server {
+    listen 80 default_server;
+    server_name _;
+    root /var/www/html/public;
+
+    add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
+    add_header X-XSS-Protection &quot;1; mode=block&quot;;
+    add_header X-Content-Type-Options &quot;nosniff&quot;;
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon-doc.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+</code></pre>
+
+<p>Save it and  run <code>nginx -t</code> to check the configuration is correctly configured. If everythins id ok then restart the nginx server. To restart the server run the following command:</p>
+<pre><code>sudo service nginx restart
+</code></pre>
+
+<h3 id="environment-setup">Environment Setup</h3>
+<p>The next thing you should do is renaming the <code>.env.example</code> file to .env, After that you need to configure it.</p>
+<h4 id="generate-application-key">Generate Application Key</h4>
+<p>Set your application key to a random string. Typically, this string should be 32 characters long. If the application key is not set, your user sessions and other encrypted data will not be secure! Follow the command below to generate the key</p>
+<pre><code>php artisan key:generate
+</code></pre>
+
+<p>Open <code>.env</code> file via your favorite text editor and configure it </p>
+<pre><code>APP_NAME=&quot;My App&quot;                       # Your own exchange name
+APP_ENV=local                           # Change it to production once installation is done
+APP_KEY=                                # This will be generated by the command given above
+APP_DEBUG=true                          # Must be false in production mode
+APP_PROTOCOL=http                       # Which protocol you are using
+APP_URL=http://Capbitex.test            # Your Web Url
+APP_INSTALLED=false                     # If don't want to install it vai web insteller then set it true
+APP_TIMEZONE=UTC                        # Set it to 'UTC' or any timezone you prefer
+
+LOG_CHANNEL=stack
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead                   # Your database name
+DB_USERNAME=homestead                   # Your mysql username
+DB_PASSWORD=secret                      # Your mysql password
+
+CACHE_DRIVER=file                       # Supported cache driver: file, redis
+QUEUE_CONNECTION=redis                  # Supported queue driver: redis
+SESSION_DRIVER=file                     # Your session driver
+SESSION_LIFETIME=120                    # Session life time in minute 
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+# Your Email Configuration
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=                      # The sender email address
+MAIL_FROM_NAME=                         # The sender name
+
+BROADCAST_DRIVER=redis
+MIX_BROADCAST_DRIVER=&quot;${BROADCAST_DRIVER}&quot;
+MIX_BROADCAST_PORT=6001                         #Laravel Echo Server Port
+
+# If you are using Laravel Echo Server then you can skip the pusher configuration  
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=
+
+MIX_PUSHER_APP_KEY=&quot;${PUSHER_APP_KEY}&quot;
+MIX_PUSHER_APP_CLUSTER=&quot;${PUSHER_APP_CLUSTER}&quot;
+
+NOCAPTCHA_SECRET=secret-key
+NOCAPTCHA_SITEKEY=site-key
+</code></pre>
+
+<h5 id="database-migration">Database Migration</h5>
+<p>To make your mysql database ready you need to run following command. Before run this command make sure you have create the database and set it name in the <code>.env</code> file</p>
+<pre><code>php artisan migrate
+</code></pre>
+
+<h5 id="install-initial-data">Install initial Data</h5>
+<p>To push initial data in database, run the following command.</p>
+<pre><code>php artisan db:seed
+</code></pre>
+
+<p><strong>Note: The website won't run without initial data.</strong></p>
+<p>To refresh the initial data in database after changing the seeders, run the following command (do not do it once you go live)</p>
+<pre><code>php artisan migrate:fresh --seed
+</code></pre>
+
+<h4 id="superadmin-user-creation">Superadmin User Creation</h4>
+<p>To create superadmin user you need to run the following command. This command will ask some user info. </p>
+<pre><code>php artisan make:superadmin
+</code></pre>
+
+<h3 id="create-symbolic-link-for-storage">Create Symbolic Link For Storage</h3>
+<p>To make them accessible from the web, you should create a symbolic link from <code>public/storage</code> to <code>storage/app/public</code>.</p>
+<p>To create the symbolic link, you may use the <code>storage:link</code> command.</p>
+<pre><code>php artisan storage:link
+</code></pre>
+
+<p><strong>Note: This command will help you to visible your media files in your system.</strong></p>
+<h3 id="test-data-seeding">Test Data Seeding</h3>
+<p><strong>Note: Don't do run it on the production server. It is for testing purpose</strong></p>
+<p>To run test data seed, first you need to configure <a href="horizon.html" target="_blank">Horizon</a>. Otherwise it will throw an error.</p>
+<p>If you want to test you system with some test data you may run the following command it will add some test data for you. It may take sometimes to execute, wait for it until it finished. </p>
+<pre><code>php artisan db:seed --class=TestSeeder
+</code></pre>
+
+<h3 id="remove-Capbitex-dev-dependencies">Remove Capbitex Dev Dependencies</h3>
+<p>To remove Capbitex dev dependencies run the following command. This will remove all packages that are not necessary in production.</p>
+<pre><code>composer install --optimize-autoloader --no-dev
+</code></pre>
+
+<h3 id="installing-javascript-dependencies">Installing JavaScript Dependencies</h3>
+<p>NPM offers an option which allows to only install app dependencies required for production environment. Use one of the following commands to skip the devDependencies in your package.json</p>
+<pre><code>npm install --production
+</code></pre>
+
+<p>Run the following command to build and minify the JavaScript files.</p>
+<pre><code>npm run production
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="server-installation.html" title="Server Installation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Server Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="broadcast.html" title="Broadcast Configuration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Broadcast Configuration
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made in
+        <a href="https://Capbitex.com" target="_blank" rel="noopener">
+          Capbitex
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.4a5ba8d6.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

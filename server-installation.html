@@ -1,0 +1,706 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="images/favicon-doc.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.3">
+    
+    
+      
+        <title>Server Installation - Capbitex Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Capbitex Documentation" class="md-header-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Capbitex Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Server Installation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Capbitex Documentation" class="md-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    Capbitex Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Server Installation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="server-installation.html" title="Server Installation" class="md-nav__link md-nav__link--active">
+      Server Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server-requirement" class="md-nav__link">
+    Server Requirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites-php-extension" class="md-nav__link">
+    Prerequisites PHP extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-installation" class="md-nav__link">
+    Server Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-nginx-server" class="md-nav__link">
+    Installing Nginx Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-phpphp-fpm" class="md-nav__link">
+    Installing PHP/PHP-FPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-php-extension" class="md-nav__link">
+    Installing PHP Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-mysql" class="md-nav__link">
+    Installing MYSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-composer" class="md-nav__link">
+    Installing Composer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-redis-server" class="md-nav__link">
+    Installing Redis Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-supervisor" class="md-nav__link">
+    Installing Supervisor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-nodejs-and-npm" class="md-nav__link">
+    Installing NodeJS and NPM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Capbitex-installation.html" title="Capbitex Installation" class="md-nav__link">
+      Capbitex Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="broadcast.html" title="Broadcast Configuration" class="md-nav__link">
+      Broadcast Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="horizon.html" title="Horizon Configuration" class="md-nav__link">
+      Horizon Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="coinpayment.html" title="Coinpayments Setting" class="md-nav__link">
+      Coinpayments Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="btc.html" title="BTC Forked Setting" class="md-nav__link">
+      BTC Forked Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="eth-settings.html" title="Ethereum Settings" class="md-nav__link">
+      Ethereum Settings
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="ethereum.html" title="Ethereum Note Setup" class="md-nav__link">
+      Ethereum Note Setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="erc20.html" title="ERC20 Setting" class="md-nav__link">
+      ERC20 Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="omnilayer.html" title="Omni Layer Setting" class="md-nav__link">
+      Omni Layer Setting
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server-requirement" class="md-nav__link">
+    Server Requirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites-php-extension" class="md-nav__link">
+    Prerequisites PHP extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-installation" class="md-nav__link">
+    Server Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-nginx-server" class="md-nav__link">
+    Installing Nginx Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-phpphp-fpm" class="md-nav__link">
+    Installing PHP/PHP-FPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-php-extension" class="md-nav__link">
+    Installing PHP Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-mysql" class="md-nav__link">
+    Installing MYSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-composer" class="md-nav__link">
+    Installing Composer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-redis-server" class="md-nav__link">
+    Installing Redis Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-supervisor" class="md-nav__link">
+    Installing Supervisor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-nodejs-and-npm" class="md-nav__link">
+    Installing NodeJS and NPM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="installation-process"><strong>Installation Process</strong></h1>
+<h2 id="server-requirement">Server Requirement</h2>
+<ul>
+<li>Linux Server (Preferred Ubuntu 20.04)</li>
+<li>RAM 4GB</li>
+<li>Space 60GB</li>
+<li>Apache 2.4/Nginx Server (Preferred Nginx)</li>
+<li>PHP 7.4+ </li>
+<li>Database (Preferred MYSQL 5.7+)</li>
+<li>PHP Dependency Manager (Preferred Composer)</li>
+<li>Redis Server For Queue Management</li>
+<li>Process Control System (Preferred Supervisor)</li>
+<li>JavaScript Dependency Management (Preferred NPM)</li>
+</ul>
+<p><strong>Note: The above server configuration is minimum requirement.</strong>  </p>
+<h2 id="prerequisites-php-extension">Prerequisites PHP extension</h2>
+<ul>
+<li>OpenSSL PHP Extension</li>
+<li>PDO PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+<li>Tokenizer PHP Extension</li>
+<li>XML PHP Extension</li>
+<li>Ctype PHP Extension</li>
+<li>JSON PHP Extension</li>
+<li>Curl PHP extension</li>
+<li>GD PHP extension</li>
+<li>GMP PHP extension</li>
+<li>Intl PHP extension</li>
+<li>BCMath PHP Extension</li>
+<li>ZIP PHP extension</li>
+<li>MYSQL PHP extension</li>
+<li>Redis PHP extension</li>
+</ul>
+<h2 id="server-installation">Server Installation</h2>
+<p>Login to your server using ssh from your terminal. After successfully logged in follow every instructions down bellow.</p>
+<p><strong>Note: You can install either apache ar nginx. Here we describe the nginx installation.</strong></p>
+<h4 id="installing-nginx-server">Installing Nginx Server</h4>
+<p>Nginx is available in Ubuntu’s default repositories, it is possible to install it from these repositories using the apt packaging system.</p>
+<p>Since this is our first interaction with the apt packaging system in this session, we will update our local package index so that we have access to the most recent package listings. Afterwards, we can install nginx:</p>
+<pre><code>sudo apt update 
+sudo apt install -y nginx 
+</code></pre>
+
+<p>When you have your server’s IP address, enter it into your browser’s address bar: 
+You should see the default Nginx landing page</p>
+<pre><code>http://your_server_ip
+</code></pre>
+
+<p>To additional configuration, you need to go through the full installation process. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04" target="_blank">Full Nginx Installation Guide</a></p>
+<h4 id="installing-phpphp-fpm">Installing PHP/PHP-FPM</h4>
+<p>Unlike Apache, Nginx doesn’t have a built in support for processing PHP files so we need to install a separate application such as PHP FPM (“fastCGI process manager”) which will handle PHP files.</p>
+<p>To install the PHP and PHP FPM packages run the following command:</p>
+<pre><code>sudo apt install -y php7.4-fpm
+</code></pre>
+
+<h4 id="installing-php-extension">Installing PHP Extension</h4>
+<p>To run the system you need install some additional extensions. PHP extensions are available as packages and can be easily installed with. </p>
+<p>To install the required php extensions run the following command:</p>
+<pre><code>sudo apt install -y php7.4-{mbstring,mysql,redis,igbinary,intl,gd,gmp,xml,curl,json,zip,bcmath}
+
+</code></pre>
+
+<h4 id="installing-mysql">Installing MYSQL</h4>
+<p>To install MYSQL go through every step describe in the link. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04" target="_blank">MYSQL Installation Guide</a></p>
+<h4 id="installing-composer">Installing Composer</h4>
+<p>To install composer (PHP dependency manager) run the following command:</p>
+<pre><code>sudo apt install -y composer
+</code></pre>
+
+<p>Or you can follow the link: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04" target="_blank">Composer Installation Guide</a></p>
+<h4 id="installing-redis-server">Installing Redis Server</h4>
+<p>To install Redis Server (In-memory key-value store) run the following command:</p>
+<pre><code>sudo apt install -y redis-server
+</code></pre>
+
+<p>If you need change the default option then follow this link <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04" target="_blank">Full Redis Installation Guide</a></p>
+<h4 id="installing-supervisor">Installing Supervisor</h4>
+<p>Supervisor is a process monitor for the Linux operating system, and will automatically restart your queue:work process if it fails. To install Supervisor on Ubuntu, you may use the following command:</p>
+<pre><code>sudo apt install -y supervisor
+</code></pre>
+
+<h4 id="installing-nodejs-and-npm">Installing NodeJS and NPM</h4>
+<p>To install a different version of Node.js, you can use a PPA (personal package archive) maintained by NodeSource. </p>
+<p>First, we will install the PPA in order to get access to its packages. From your home directory, use curl to retrieve the installation script for your preferred version, making sure to replace 12.x with your preferred version string (if different).</p>
+<pre><code>curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="index.html" title="Introduction" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="Capbitex-installation.html" title="Capbitex Installation" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Capbitex Installation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made in
+        <a href="https://Capbitex.com" target="_blank" rel="noopener">
+          Capbitex
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.4a5ba8d6.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

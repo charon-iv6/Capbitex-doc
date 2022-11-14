@@ -1,0 +1,622 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="images/favicon-doc.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.3">
+    
+    
+      
+        <title>Broadcast Configuration - Capbitex Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pusher-driver-ingratiation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Capbitex Documentation" class="md-header-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Capbitex Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Broadcast Configuration
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Capbitex Documentation" class="md-nav__button md-capbitex-test-doc" aria-label="Capbitex Documentation">
+      
+  <img src="images/capbitex-test-doc.png" alt="capbitex-test-doc" width="350" height="150">
+
+    </a>
+    Capbitex Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="server-installation.html" title="Server Installation" class="md-nav__link">
+      Server Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Capbitex-installation.html" title="Capbitex Installation" class="md-nav__link">
+      Capbitex Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Broadcast Configuration
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="broadcast.html" title="Broadcast Configuration" class="md-nav__link md-nav__link--active">
+      Broadcast Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pusher-driver-ingratiation" class="md-nav__link">
+    Pusher Driver Ingratiation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-driver-configuration" class="md-nav__link">
+    Redis Driver Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Driver Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-laravel-echo-server" class="md-nav__link">
+    Installing Laravel Echo Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-echo-server" class="md-nav__link">
+    Configuring Echo Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Echo Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-supervisor" class="md-nav__link">
+    Starting Supervisor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="horizon.html" title="Horizon Configuration" class="md-nav__link">
+      Horizon Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="coinpayment.html" title="Coinpayments Setting" class="md-nav__link">
+      Coinpayments Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="btc.html" title="BTC Forked Setting" class="md-nav__link">
+      BTC Forked Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="eth-settings.html" title="Ethereum Settings" class="md-nav__link">
+      Ethereum Settings
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="ethereum.html" title="Ethereum Note Setup" class="md-nav__link">
+      Ethereum Note Setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="erc20.html" title="ERC20 Setting" class="md-nav__link">
+      ERC20 Setting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="omnilayer.html" title="Omni Layer Setting" class="md-nav__link">
+      Omni Layer Setting
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pusher-driver-ingratiation" class="md-nav__link">
+    Pusher Driver Ingratiation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-driver-configuration" class="md-nav__link">
+    Redis Driver Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Driver Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-laravel-echo-server" class="md-nav__link">
+    Installing Laravel Echo Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-echo-server" class="md-nav__link">
+    Configuring Echo Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Echo Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-supervisor" class="md-nav__link">
+    Starting Supervisor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Broadcast Configuration</h1>
+                
+                <p>In many modern web applications, WebSockets are used to implement realtime, live-updating user interfaces. When some data is updated on the server, a message is typically sent over a WebSocket connection to be handled by the client. This provides a more robust, efficient alternative to continually polling your application for changes.</p>
+<p>Capbitex supports several broadcast drivers out of the box:</p>
+<ol>
+<li>Pusher</li>
+<li>Redis  </li>
+</ol>
+<h2 id="pusher-driver-ingratiation">Pusher Driver Ingratiation</h2>
+<p>Update your broadcast driver to pusher in your .env file:</p>
+<pre><code>BROADCAST_DRIVER=pusher
+</code></pre>
+
+<p>After updating <code>.env</code> file. Clear your config file by following command:</p>
+<pre><code>php artisan clear:all
+</code></pre>
+
+<p><a href="https://dashboard.pusher.com/accounts/sign_up" target="_blank">Sign Up</a> an account if you don’t have any. After logging in your account create a new app for your exchange. Once creation is done you will be redirect to a page where app keys tab will have all the credential you need. Copy them and paste them under the related keys in <code>.env</code> file. check </p>
+<pre><code>PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=
+
+MIX_PUSHER_APP_KEY=&quot;${PUSHER_APP_KEY}&quot;
+MIX_PUSHER_APP_CLUSTER=&quot;${PUSHER_APP_CLUSTER}&quot;
+</code></pre>
+
+<p>After adding these variables run the following command:</p>
+<pre><code>npm run production
+</code></pre>
+
+<p>If you setup all correctly then you have configured broadcast successfully. </p>
+<h2 id="redis-driver-configuration">Redis Driver Configuration</h2>
+<p>The Redis broadcaster will broadcast messages using Redis' pub / sub feature; however, you will need to pair this with a WebSocket server that can receive the messages from Redis and broadcast them to your WebSocket channels.</p>
+<h4 id="installing-laravel-echo-server">Installing Laravel Echo Server</h4>
+<p>To install Laravel Echo server you need to run the following command: </p>
+<pre><code>sudo npm install -g laravel-echo-server
+</code></pre>
+
+<p>Run the init command in your project directory. It will ask you several questions to configure of your server. </p>
+<pre><code>laravel-echo-server init
+</code></pre>
+
+<p>The cli tool will help you setup a <code>laravel-echo-server.json</code> file in the root directory of your project. For more details: <a href="https://github.com/tlaverdure/laravel-echo-server" target="_blank">Laravel Echo Server</a></p>
+<p>You may edit this file later on to manage the configuration of your server.</p>
+<p>To manage the configuration open <code>laravel-echo-server.json</code> file with your text editor</p>
+<pre><code>sudo vim laravel-echo-server.json
+</code></pre>
+
+<p>Now you have to update your broadcast driver to redis in your .env file:</p>
+<pre><code>BROADCAST_DRIVER=redis
+</code></pre>
+
+<p>After adding these variables run the following command:</p>
+<pre><code>npm run production
+</code></pre>
+
+<h4 id="configuring-echo-server">Configuring Echo Server</h4>
+<p>Supervisor configuration files are typically stored in the <code>/etc/supervisor/conf.d</code> directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a <code>echo-server.conf</code> file that starts and monitors a <code>echo-server</code> process:</p>
+<pre><code>[program:echo-server]
+process_name=%(program_name)s
+command=laravel-echo-server start --dir=/var/www/html
+autostart=true
+autorestart=true
+user=root
+redirect_stderr=true
+stdout_logfile=/var/log/echo-server.log
+</code></pre>
+
+<p>If your server does not have <code>root</code> user, then change the <code>user</code> as well. <strong>Make sure <code>/var/log/echo-server.log</code> the file is created and has write permission</strong></p>
+<h5 id="starting-supervisor">Starting Supervisor</h5>
+<p>Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands:</p>
+<pre><code>supervisorctl reread
+
+supervisorctl update
+
+supervisorctl start echo-server
+</code></pre>
+
+<p>You need to run the following command to check if your supervisor is running successfully.</p>
+<pre><code>supervisorctl status
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="Capbitex-installation.html" title="Capbitex Installation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Capbitex Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="horizon.html" title="Horizon Configuration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Horizon Configuration
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made in
+        <a href="https://Capbitex.com" target="_blank" rel="noopener">
+          Capbitex
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.4a5ba8d6.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

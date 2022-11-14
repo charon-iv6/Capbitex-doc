@@ -1,0 +1,407 @@
+{
+    "config": {
+        "lang": [
+            "en"
+        ],
+        "min_search_length": 3,
+        "prebuild_index": false,
+        "separator": "[\\s\\-]+"
+    },
+    "docs": [
+        {
+            "location": "index.html",
+            "text": "Capbitex is built with laravel. All the codes supported by laravel and php will also work here. It is a trading platform to build a super fast cryptocurrency trading platform for business. Technology used PHP Language MYSQL Database Laravel Framework Redis Server Pusher Laravel Horizon Features BTC node Integrated Coinpayments Coin Api Integrated Instant Payment notice (IPN) Ready Referral System Unlimited Coin Creation Unlimited Trading Pair Creation Application Settings Withdrawal and Deposit Management Limit Order, Market Order, Stop-Limit Order Live Trading View Chart User Activities Google 2FA Authentication Google reCaptcha Account Verification By Email KYC Verification Dynamic Role Management Dynamic Menu Manager Admin Notice User Notification Mobile Ready Ultra Fast Trading Algorithm Easy to go User Experience",
+            "title": "Introduction"
+        },
+        {
+            "location": "index.html#technology-used",
+            "text": "PHP Language MYSQL Database Laravel Framework Redis Server Pusher Laravel Horizon",
+            "title": "Technology used"
+        },
+        {
+            "location": "index.html#features",
+            "text": "BTC node Integrated Coinpayments Coin Api Integrated Instant Payment notice (IPN) Ready Referral System Unlimited Coin Creation Unlimited Trading Pair Creation Application Settings Withdrawal and Deposit Management Limit Order, Market Order, Stop-Limit Order Live Trading View Chart User Activities Google 2FA Authentication Google reCaptcha Account Verification By Email KYC Verification Dynamic Role Management Dynamic Menu Manager Admin Notice User Notification Mobile Ready Ultra Fast Trading Algorithm Easy to go User Experience",
+            "title": "Features"
+        },
+        {
+            "location": "broadcast.html",
+            "text": "In many modern web applications, WebSockets are used to implement realtime, live-updating user interfaces. When some data is updated on the server, a message is typically sent over a WebSocket connection to be handled by the client. This provides a more robust, efficient alternative to continually polling your application for changes. Capbitex supports several broadcast drivers out of the box: Pusher Redis Pusher Driver Ingratiation Update your broadcast driver to pusher in your .env file: BROADCAST_DRIVER=pusher After updating .env file. Clear your config file by following command: php artisan clear:all Sign Up an account if you don\u2019t have any. After logging in your account create a new app for your exchange. Once creation is done you will be redirect to a page where app keys tab will have all the credential you need. Copy them and paste them under the related keys in .env file. check PUSHER_APP_ID= PUSHER_APP_KEY= PUSHER_APP_SECRET= PUSHER_APP_CLUSTER= MIX_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\" MIX_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\" After adding these variables run the following command: npm run production If you setup all correctly then you have configured broadcast successfully. Redis Driver Configuration The Redis broadcaster will broadcast messages using Redis' pub / sub feature; however, you will need to pair this with a WebSocket server that can receive the messages from Redis and broadcast them to your WebSocket channels. Installing Laravel Echo Server To install Laravel Echo server you need to run the following command: sudo npm install -g laravel-echo-server Run the init command in your project directory. It will ask you several questions to configure of your server. laravel-echo-server init The cli tool will help you setup a laravel-echo-server.json file in the root directory of your project. For more details: Laravel Echo Server You may edit this file later on to manage the configuration of your server. To manage the configuration open laravel-echo-server.json file with your text editor sudo vim laravel-echo-server.json Now you have to update your broadcast driver to redis in your .env file: BROADCAST_DRIVER=redis After adding these variables run the following command: npm run production Configuring Echo Server Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a echo-server.conf file that starts and monitors a echo-server process: [program:echo-server] process_name=%(program_name)s command=laravel-echo-server start --dir=/var/www/html autostart=true autorestart=true user=root redirect_stderr=true stdout_logfile=/var/log/echo-server.log If your server does not have root user, then change the user as well. Make sure /var/log/echo-server.log the file is created and has write permission Starting Supervisor Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start echo-server You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Broadcast Configuration"
+        },
+        {
+            "location": "broadcast.html#pusher-driver-ingratiation",
+            "text": "Update your broadcast driver to pusher in your .env file: BROADCAST_DRIVER=pusher After updating .env file. Clear your config file by following command: php artisan clear:all Sign Up an account if you don\u2019t have any. After logging in your account create a new app for your exchange. Once creation is done you will be redirect to a page where app keys tab will have all the credential you need. Copy them and paste them under the related keys in .env file. check PUSHER_APP_ID= PUSHER_APP_KEY= PUSHER_APP_SECRET= PUSHER_APP_CLUSTER= MIX_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\" MIX_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\" After adding these variables run the following command: npm run production If you setup all correctly then you have configured broadcast successfully.",
+            "title": "Pusher Driver Ingratiation"
+        },
+        {
+            "location": "broadcast.html#redis-driver-configuration",
+            "text": "The Redis broadcaster will broadcast messages using Redis' pub / sub feature; however, you will need to pair this with a WebSocket server that can receive the messages from Redis and broadcast them to your WebSocket channels.",
+            "title": "Redis Driver Configuration"
+        },
+        {
+            "location": "broadcast.html#installing-laravel-echo-server",
+            "text": "To install Laravel Echo server you need to run the following command: sudo npm install -g laravel-echo-server Run the init command in your project directory. It will ask you several questions to configure of your server. laravel-echo-server init The cli tool will help you setup a laravel-echo-server.json file in the root directory of your project. For more details: Laravel Echo Server You may edit this file later on to manage the configuration of your server. To manage the configuration open laravel-echo-server.json file with your text editor sudo vim laravel-echo-server.json Now you have to update your broadcast driver to redis in your .env file: BROADCAST_DRIVER=redis After adding these variables run the following command: npm run production",
+            "title": "Installing Laravel Echo Server"
+        },
+        {
+            "location": "broadcast.html#configuring-echo-server",
+            "text": "Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a echo-server.conf file that starts and monitors a echo-server process: [program:echo-server] process_name=%(program_name)s command=laravel-echo-server start --dir=/var/www/html autostart=true autorestart=true user=root redirect_stderr=true stdout_logfile=/var/log/echo-server.log If your server does not have root user, then change the user as well. Make sure /var/log/echo-server.log the file is created and has write permission",
+            "title": "Configuring Echo Server"
+        },
+        {
+            "location": "broadcast.html#starting-supervisor",
+            "text": "Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start echo-server You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Starting Supervisor"
+        },
+        {
+            "location": "btc.html",
+            "text": "BTC Altcoin API Configuration Capbitex provides BTC altcoin API for interacting with BTC altcoin node. To enable BTC altcoin API you need to go to Application Control > Application Settings > Api Settings > Bitcoin from sidebar nav. If you want to configure another altcoin like Litecoin then select Litecoin . Note: If you didn't select the coin API from coin setting API section then you couldn't find the API settings here. So first you have to select the API from the coin settings Fill out all the form fields except SSL Cert File Location field and update the setting. If you want to use ssl certificate to communicate with BTC altcoin node then fill SSL Cert File Location field otherwise it won't necessary. BTC Altcoin Node Configuration To allow RPC call from your system add the following setting into your BTC Altcoin node config file rpcallowip=127.0.0.1 #Your server IP address To active wallet notify you may add the following setting into your BTC Altcoin node config file. Before adding the setting make sure this URL http://your-domain.com/api/ipn/bitcoin/BTC works perfectly. To check the you need to visit the URL from your browser if it return blank then it's ok. walletnotify=curl http://your-domain.com/api/ipn/bitcoin/BTC?txn_id=%s Note: After every change to your BTC altcoin config file. Don't forget to restart the BTC altcoin node daemon",
+            "title": "BTC Forked Setting"
+        },
+        {
+            "location": "btc.html#btc-altcoin-api-configuration",
+            "text": "Capbitex provides BTC altcoin API for interacting with BTC altcoin node. To enable BTC altcoin API you need to go to Application Control > Application Settings > Api Settings > Bitcoin from sidebar nav. If you want to configure another altcoin like Litecoin then select Litecoin . Note: If you didn't select the coin API from coin setting API section then you couldn't find the API settings here. So first you have to select the API from the coin settings Fill out all the form fields except SSL Cert File Location field and update the setting. If you want to use ssl certificate to communicate with BTC altcoin node then fill SSL Cert File Location field otherwise it won't necessary.",
+            "title": "BTC Altcoin API Configuration"
+        },
+        {
+            "location": "btc.html#btc-altcoin-node-configuration",
+            "text": "To allow RPC call from your system add the following setting into your BTC Altcoin node config file rpcallowip=127.0.0.1 #Your server IP address To active wallet notify you may add the following setting into your BTC Altcoin node config file. Before adding the setting make sure this URL http://your-domain.com/api/ipn/bitcoin/BTC works perfectly. To check the you need to visit the URL from your browser if it return blank then it's ok. walletnotify=curl http://your-domain.com/api/ipn/bitcoin/BTC?txn_id=%s Note: After every change to your BTC altcoin config file. Don't forget to restart the BTC altcoin node daemon",
+            "title": "BTC Altcoin Node Configuration"
+        },
+        {
+            "location": "coinpayment.html",
+            "text": "Coinpayments Configuration You can see our video tutorial for coinpayments configuration: Coinpayments Configuration . Create Coinpayments Account Please go to https://www.coinpayments.net and open an account if you don\u2019t have any. After logging in your account please you need to collect the following credentials - Private And Public Key To generate private and public keys go to this API Keys tab. You can find this tab under Account > API KEY or visit this link https://www.coinpayments.net/acct-api-keys . Click on the Generate new key... Button and you will get public and private keys. Copy and paste them in your .env file. Next click on the Edit Permissions button and you will be have two sections, one is API Key Settings and another API Key Permissions . You can configure them according to your requirements. For API Key Permission please check all the options except get_basic_info and set_basic_info . Coinpayments Merchant ID Please visit Account Settings under Account menu or click on this https://www.coinpayments.net/acct-settings and you will get your Merchant ID under Basic Settings tab. Please copy and set this as value for COINPAYMENT_MERCHANT_ID in .env file. Coinpayments IPN Secret Please visit Account Settings under Account menu or click on this https://www.coinpayments.net/acct-settings and select Merchant Settings tab. The very first field is for IPN secret and input random string and save. Use the same IPN secret value for COINPAYMENT_IPN_SECRET in .env file. Coinpayments API Settings After installation the system login with your superadmin account then go to Application Control > Application Settings > Api Settings > Coinpayments from sidebar nav. Then fill out all the form fields except CH field and update the setting. If you want to use ssl certificate to communicate with coinpayments then fill CH field otherwise it won't necessary.",
+            "title": "Coinpayments Setting"
+        },
+        {
+            "location": "coinpayment.html#coinpayments-configuration",
+            "text": "You can see our video tutorial for coinpayments configuration: Coinpayments Configuration .",
+            "title": "Coinpayments Configuration"
+        },
+        {
+            "location": "coinpayment.html#create-coinpayments-account",
+            "text": "Please go to https://www.coinpayments.net and open an account if you don\u2019t have any. After logging in your account please you need to collect the following credentials -",
+            "title": "Create Coinpayments Account"
+        },
+        {
+            "location": "coinpayment.html#private-and-public-key",
+            "text": "To generate private and public keys go to this API Keys tab. You can find this tab under Account > API KEY or visit this link https://www.coinpayments.net/acct-api-keys . Click on the Generate new key... Button and you will get public and private keys. Copy and paste them in your .env file. Next click on the Edit Permissions button and you will be have two sections, one is API Key Settings and another API Key Permissions . You can configure them according to your requirements. For API Key Permission please check all the options except get_basic_info and set_basic_info .",
+            "title": "Private And Public Key"
+        },
+        {
+            "location": "coinpayment.html#coinpayments-merchant-id",
+            "text": "Please visit Account Settings under Account menu or click on this https://www.coinpayments.net/acct-settings and you will get your Merchant ID under Basic Settings tab. Please copy and set this as value for COINPAYMENT_MERCHANT_ID in .env file.",
+            "title": "Coinpayments Merchant ID"
+        },
+        {
+            "location": "coinpayment.html#coinpayments-ipn-secret",
+            "text": "Please visit Account Settings under Account menu or click on this https://www.coinpayments.net/acct-settings and select Merchant Settings tab. The very first field is for IPN secret and input random string and save. Use the same IPN secret value for COINPAYMENT_IPN_SECRET in .env file.",
+            "title": "Coinpayments IPN Secret"
+        },
+        {
+            "location": "coinpayment.html#coinpayments-api-settings",
+            "text": "After installation the system login with your superadmin account then go to Application Control > Application Settings > Api Settings > Coinpayments from sidebar nav. Then fill out all the form fields except CH field and update the setting. If you want to use ssl certificate to communicate with coinpayments then fill CH field otherwise it won't necessary.",
+            "title": "Coinpayments API Settings"
+        },
+        {
+            "location": "erc20.html",
+            "text": "ERC20 API Configuration Settings Capbitex provides ERC20 API for interacting with ERC20 token. ERC20 dependent on ETH so, first we need to enable ETH from Application Control > Application Settings > Api Settings > Ethereum from sidebar nav. Without ETH setting ERC20 will not work. Create ERC20 Coin To create ERC20 coin select \"ERC20\" coin type. Then fill out the symbol, name, contract address and decimal of the ERC20 token. All these fields are required and make sure these fields are same as the token otherwise it will not work properly. After creating the coin then from the \"API\" tab select \"ERC20 API\". To get instant deposit/withdrawal confirmation make sure you have enable ethereum websocket. Without this your deposit and withdrawal won't work. Ethereum Websocket Configuration How ERC20 works on Capbitex: After the creation of ERC20 in coin section, it must be made sure that System wallet address is being generated successfully. It can be checked from the system wallet menu in left sidebar admin navbar. For every erc20 coin, admin must deposit enough eth to make sure transactions may not hamper. Because every erc20 transaction needs eth as gas fee for transaction either deposit or withdrawal. The process flow of ERC20 on Capbitex:",
+            "title": "ERC20 Setting"
+        },
+        {
+            "location": "erc20.html#erc20-api-configuration",
+            "text": "",
+            "title": "ERC20 API Configuration"
+        },
+        {
+            "location": "erc20.html#settings",
+            "text": "Capbitex provides ERC20 API for interacting with ERC20 token. ERC20 dependent on ETH so, first we need to enable ETH from Application Control > Application Settings > Api Settings > Ethereum from sidebar nav. Without ETH setting ERC20 will not work.",
+            "title": "Settings"
+        },
+        {
+            "location": "erc20.html#create-erc20-coin",
+            "text": "To create ERC20 coin select \"ERC20\" coin type. Then fill out the symbol, name, contract address and decimal of the ERC20 token. All these fields are required and make sure these fields are same as the token otherwise it will not work properly. After creating the coin then from the \"API\" tab select \"ERC20 API\". To get instant deposit/withdrawal confirmation make sure you have enable ethereum websocket. Without this your deposit and withdrawal won't work. Ethereum Websocket Configuration",
+            "title": "Create ERC20 Coin"
+        },
+        {
+            "location": "erc20.html#how-erc20-works-on-Capbitex",
+            "text": "After the creation of ERC20 in coin section, it must be made sure that System wallet address is being generated successfully. It can be checked from the system wallet menu in left sidebar admin navbar. For every erc20 coin, admin must deposit enough eth to make sure transactions may not hamper. Because every erc20 transaction needs eth as gas fee for transaction either deposit or withdrawal. The process flow of ERC20 on Capbitex:",
+            "title": "How ERC20 works on Capbitex:"
+        },
+        {
+            "location": "eth-settings.html",
+            "text": "Ethereum API Configuration Settings Capbitex provides ETH API for interacting with ETH node. To enable ETH API you need to go to Application Control > Application Settings > Api Settings > Ethereum from sidebar nav. Coin Settings Select the Ethereum API from coin settings as bellow: Ethereum Websocket Configuration Ethereum node does not notify while a deposit/withdrawal occurs. So,we build a command that receives a new blockhead and process when a block mined into the blockchain. In order to run it continuously, it needs to run by a process manager. Here we use supervisord for our process manager. Supervisor Configuration Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a ethereum.conf file that starts and monitors a ethereum websocket process: [program:ethereum] process_name=%(program_name)s command=php /var/www/html/project_directory/artisan ethereum:websocket autostart=true autorestart=true user=root redirect_stderr=true Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start ethereum You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Ethereum Settings"
+        },
+        {
+            "location": "eth-settings.html#ethereum-api-configuration",
+            "text": "",
+            "title": "Ethereum API Configuration"
+        },
+        {
+            "location": "eth-settings.html#settings",
+            "text": "Capbitex provides ETH API for interacting with ETH node. To enable ETH API you need to go to Application Control > Application Settings > Api Settings > Ethereum from sidebar nav.",
+            "title": "Settings"
+        },
+        {
+            "location": "eth-settings.html#coin-settings",
+            "text": "Select the Ethereum API from coin settings as bellow:",
+            "title": "Coin Settings"
+        },
+        {
+            "location": "eth-settings.html#ethereum-websocket-configuration",
+            "text": "Ethereum node does not notify while a deposit/withdrawal occurs. So,we build a command that receives a new blockhead and process when a block mined into the blockchain. In order to run it continuously, it needs to run by a process manager. Here we use supervisord for our process manager.",
+            "title": "Ethereum Websocket Configuration"
+        },
+        {
+            "location": "eth-settings.html#supervisor-configuration",
+            "text": "Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a ethereum.conf file that starts and monitors a ethereum websocket process: [program:ethereum] process_name=%(program_name)s command=php /var/www/html/project_directory/artisan ethereum:websocket autostart=true autorestart=true user=root redirect_stderr=true Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start ethereum You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Supervisor Configuration"
+        },
+        {
+            "location": "ethereum.html",
+            "text": "Ethereum Node Setup Recommended Server Requirements RAM : 8GB Disk: 160 GB OS: Ubuntu 20.04 To install ETH node run the following commands: sudo add-apt-repository -y ppa:ethereum/ethereum sudo apt-get update sudo apt-get install ethereum -y After installing the node run the following command to generate a configuration file. If you want to install test node then add any of the test node flag to the following command after geth --goerli --rinkeby --yolov2 --ropsten geth --syncmode=fast --cache=2048 --http --http.api \"eth,net,web3,personal\" --http.corsdomain '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api \"eth,web3\" --ws.origins '*' --ws.addr 0.0.0.0 --ws.port 8546 --nousb dumpconfig > config.toml Now you have to create service file geth.service . Run the following command: vim geth.service Copy and paste the following configurations: [Unit] Description=Geth [Service] Type=simple User=root Restart=always WorkingDirectory=/root ExecStart=/usr/bin/geth --config config.toml [Install] WantedBy=default.target Note: If your server username is not root then don't forget to change the name from the above configurations Run these following command to active the service that created. cp geth.service /etc/systemd/system/geth.service systemctl daemon-reload systemctl enable geth.service systemctl start geth Note: Syncing Node will take times depends on sync mode and network mode . Wait until sync completed Secure The Ethereum Node Setting Up Firewall Using UFW Install UFW sudo apt-get install ufw Set Up Default Policies sudo ufw default deny incoming sudo ufw default allow outgoing Allow Ethereum Network Port We would also enable ethereum network so that our nodes can be able to communicate and sync with the public blockchain network. The Ethereum network port is 30303 sudo ufw allow 30303 Enable RPC port sudo ufw allow from <SERVER IP> to any port 8545 sudo ufw allow from <SERVER IP> to any port 8546 Note: If you are using a different a different RPC port then it should be specified Enable UFW sudo ufw enable Allow HTTP sudo ufw allow http Allow HTTP sudo ufw allow ssh",
+            "title": "Ethereum Note Setup"
+        },
+        {
+            "location": "ethereum.html#ethereum-node-setup",
+            "text": "",
+            "title": "Ethereum Node Setup"
+        },
+        {
+            "location": "ethereum.html#recommended-server-requirements",
+            "text": "RAM : 8GB Disk: 160 GB OS: Ubuntu 20.04 To install ETH node run the following commands: sudo add-apt-repository -y ppa:ethereum/ethereum sudo apt-get update sudo apt-get install ethereum -y After installing the node run the following command to generate a configuration file. If you want to install test node then add any of the test node flag to the following command after geth --goerli --rinkeby --yolov2 --ropsten geth --syncmode=fast --cache=2048 --http --http.api \"eth,net,web3,personal\" --http.corsdomain '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api \"eth,web3\" --ws.origins '*' --ws.addr 0.0.0.0 --ws.port 8546 --nousb dumpconfig > config.toml Now you have to create service file geth.service . Run the following command: vim geth.service Copy and paste the following configurations: [Unit] Description=Geth [Service] Type=simple User=root Restart=always WorkingDirectory=/root ExecStart=/usr/bin/geth --config config.toml [Install] WantedBy=default.target Note: If your server username is not root then don't forget to change the name from the above configurations Run these following command to active the service that created. cp geth.service /etc/systemd/system/geth.service systemctl daemon-reload systemctl enable geth.service systemctl start geth Note: Syncing Node will take times depends on sync mode and network mode . Wait until sync completed",
+            "title": "Recommended Server Requirements"
+        },
+        {
+            "location": "ethereum.html#secure-the-ethereum-node",
+            "text": "",
+            "title": "Secure The Ethereum Node"
+        },
+        {
+            "location": "ethereum.html#setting-up-firewall-using-ufw",
+            "text": "",
+            "title": "Setting Up Firewall Using UFW"
+        },
+        {
+            "location": "ethereum.html#install-ufw",
+            "text": "sudo apt-get install ufw",
+            "title": "Install UFW"
+        },
+        {
+            "location": "ethereum.html#set-up-default-policies",
+            "text": "sudo ufw default deny incoming sudo ufw default allow outgoing",
+            "title": "Set Up Default Policies"
+        },
+        {
+            "location": "ethereum.html#allow-ethereum-network-port",
+            "text": "We would also enable ethereum network so that our nodes can be able to communicate and sync with the public blockchain network. The Ethereum network port is 30303 sudo ufw allow 30303",
+            "title": "Allow Ethereum Network Port"
+        },
+        {
+            "location": "ethereum.html#enable-rpc-port",
+            "text": "sudo ufw allow from <SERVER IP> to any port 8545 sudo ufw allow from <SERVER IP> to any port 8546 Note: If you are using a different a different RPC port then it should be specified",
+            "title": "Enable RPC port"
+        },
+        {
+            "location": "ethereum.html#enable-ufw",
+            "text": "sudo ufw enable",
+            "title": "Enable UFW"
+        },
+        {
+            "location": "ethereum.html#allow-http",
+            "text": "sudo ufw allow http",
+            "title": "Allow HTTP"
+        },
+        {
+            "location": "ethereum.html#allow-http_1",
+            "text": "sudo ufw allow ssh",
+            "title": "Allow HTTP"
+        },
+        {
+            "location": "horizon.html",
+            "text": "Horizon Configuration Horizon provides a beautiful dashboard and code-driven configuration for your System. Horizon allows you to easily monitor your queue system such as job throughput, runtime, and job failures. All of your worker configuration is stored in a single, simple configuration file. Deploying Horizon If you are deploying Horizon to a live server, you should configure a process monitor to monitor the php artisan horizon command and restart it if it quits unexpectedly. When deploying fresh code to your server, you will need to instruct the master Horizon process to terminate so it can be restarted by your process monitor and receive your code changes. If you are not install supervisor yet then run sudo apt install -y supervisor to install supervisor. Run the following command to check supervisor is installed. supervisord --version Configuring Horizon Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a horizon.conf file that starts and monitors a horizon process: [program:horizon] process_name=%(program_name)s command=php /var/www/html/project_directory/artisan horizon autostart=true autorestart=true user=root redirect_stderr=true stdout_logfile=/var/log/horizon.log stopwaitsecs=3600 Replace \u200bproject_directory \u200bto your project directory name. If your server does not have root user, then change the user as well. Make sure /var/log/horizon.log the file is created and has write permission Update Queue Connection Update your queue connection to redis in your .env file: QUEUE_CONNECTION=redis After updating .env file. Clear your config file by following command: php artisan clear:all Starting Supervisor Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start horizon You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Horizon Configuration"
+        },
+        {
+            "location": "horizon.html#horizon-configuration",
+            "text": "Horizon provides a beautiful dashboard and code-driven configuration for your System. Horizon allows you to easily monitor your queue system such as job throughput, runtime, and job failures. All of your worker configuration is stored in a single, simple configuration file.",
+            "title": "Horizon Configuration"
+        },
+        {
+            "location": "horizon.html#deploying-horizon",
+            "text": "If you are deploying Horizon to a live server, you should configure a process monitor to monitor the php artisan horizon command and restart it if it quits unexpectedly. When deploying fresh code to your server, you will need to instruct the master Horizon process to terminate so it can be restarted by your process monitor and receive your code changes. If you are not install supervisor yet then run sudo apt install -y supervisor to install supervisor. Run the following command to check supervisor is installed. supervisord --version",
+            "title": "Deploying Horizon"
+        },
+        {
+            "location": "horizon.html#configuring-horizon",
+            "text": "Supervisor configuration files are typically stored in the /etc/supervisor/conf.d directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a horizon.conf file that starts and monitors a horizon process: [program:horizon] process_name=%(program_name)s command=php /var/www/html/project_directory/artisan horizon autostart=true autorestart=true user=root redirect_stderr=true stdout_logfile=/var/log/horizon.log stopwaitsecs=3600 Replace \u200bproject_directory \u200bto your project directory name. If your server does not have root user, then change the user as well. Make sure /var/log/horizon.log the file is created and has write permission",
+            "title": "Configuring Horizon"
+        },
+        {
+            "location": "horizon.html#update-queue-connection",
+            "text": "Update your queue connection to redis in your .env file: QUEUE_CONNECTION=redis After updating .env file. Clear your config file by following command: php artisan clear:all",
+            "title": "Update Queue Connection"
+        },
+        {
+            "location": "horizon.html#starting-supervisor",
+            "text": "Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands: supervisorctl reread supervisorctl update supervisorctl start horizon You need to run the following command to check if your supervisor is running successfully. supervisorctl status",
+            "title": "Starting Supervisor"
+        },
+        {
+            "location": "omnilayer.html",
+            "text": "Omni Layer API Configuration Capbitex provides Omni Layer API for interacting with Omnicore node. To enable Omni Layer API you need to go to Application Control > Application Settings > Api Settings > Omni Layer Coin Name from sidebar nav. If you want to configure another Omni Layer coin like USDT then select USD Tether . Note: If you didn't select the coin API from coin setting API section then you couldn't find the API settings here. So first you have to select the API from the coin settings Fill out all the form fields except SSL Cert File Location field and update the setting. If you want to use ssl certificate to communicate with BTC altcoin node then fill SSL Cert File Location field otherwise it won't necessary. Omni Layer Node Configuration Omni Layer is build on top of Bitcoin node. So the Omni Layer node installation almost like Bitcoin node installation. To allow RPC call from your system add the following setting into your Bitcoin node config file rpcallowip=127.0.0.1 #Your server IP address To active wallet notify you may add the following setting into your Bitcoin node config file. Before adding the setting make sure this URL http://your-domain.com/api/ipn/bitcoin/USDT works perfectly. To check the you need to visit the URL from your browser if it return blank then it's ok. If your coin symbol is other than USDT then you need to change USDT to your coin symbol form the URL. walletnotify=curl http://your-domain.com/api/ipn/bitcoin/USDT?txn_id=%s Note: After every change to your Bitcoin config file. Don't forget to restart the Omnicored daemon Check the following link to install Omnicore Node: Omnicore Node Installation",
+            "title": "Omni Layer Setting"
+        },
+        {
+            "location": "omnilayer.html#omni-layer-api-configuration",
+            "text": "Capbitex provides Omni Layer API for interacting with Omnicore node. To enable Omni Layer API you need to go to Application Control > Application Settings > Api Settings > Omni Layer Coin Name from sidebar nav. If you want to configure another Omni Layer coin like USDT then select USD Tether . Note: If you didn't select the coin API from coin setting API section then you couldn't find the API settings here. So first you have to select the API from the coin settings Fill out all the form fields except SSL Cert File Location field and update the setting. If you want to use ssl certificate to communicate with BTC altcoin node then fill SSL Cert File Location field otherwise it won't necessary.",
+            "title": "Omni Layer API Configuration"
+        },
+        {
+            "location": "omnilayer.html#omni-layer-node-configuration",
+            "text": "Omni Layer is build on top of Bitcoin node. So the Omni Layer node installation almost like Bitcoin node installation. To allow RPC call from your system add the following setting into your Bitcoin node config file rpcallowip=127.0.0.1 #Your server IP address To active wallet notify you may add the following setting into your Bitcoin node config file. Before adding the setting make sure this URL http://your-domain.com/api/ipn/bitcoin/USDT works perfectly. To check the you need to visit the URL from your browser if it return blank then it's ok. If your coin symbol is other than USDT then you need to change USDT to your coin symbol form the URL. walletnotify=curl http://your-domain.com/api/ipn/bitcoin/USDT?txn_id=%s Note: After every change to your Bitcoin config file. Don't forget to restart the Omnicored daemon Check the following link to install Omnicore Node: Omnicore Node Installation",
+            "title": "Omni Layer Node Configuration"
+        },
+        {
+            "location": "server-installation.html",
+            "text": "Installation Process Server Requirement Linux Server (Preferred Ubuntu 20.04) RAM 4GB Space 60GB Apache 2.4/Nginx Server (Preferred Nginx) PHP 7.4+ Database (Preferred MYSQL 5.7+) PHP Dependency Manager (Preferred Composer) Redis Server For Queue Management Process Control System (Preferred Supervisor) JavaScript Dependency Management (Preferred NPM) Note: The above server configuration is minimum requirement. Prerequisites PHP extension OpenSSL PHP Extension PDO PHP Extension Mbstring PHP Extension Tokenizer PHP Extension XML PHP Extension Ctype PHP Extension JSON PHP Extension Curl PHP extension GD PHP extension GMP PHP extension Intl PHP extension BCMath PHP Extension ZIP PHP extension MYSQL PHP extension Redis PHP extension Server Installation Login to your server using ssh from your terminal. After successfully logged in follow every instructions down bellow. Note: You can install either apache ar nginx. Here we describe the nginx installation. Installing Nginx Server Nginx is available in Ubuntu\u2019s default repositories, it is possible to install it from these repositories using the apt packaging system. Since this is our first interaction with the apt packaging system in this session, we will update our local package index so that we have access to the most recent package listings. Afterwards, we can install nginx: sudo apt update sudo apt install -y nginx When you have your server\u2019s IP address, enter it into your browser\u2019s address bar: You should see the default Nginx landing page http://your_server_ip To additional configuration, you need to go through the full installation process. Full Nginx Installation Guide Installing PHP/PHP-FPM Unlike Apache, Nginx doesn\u2019t have a built in support for processing PHP files so we need to install a separate application such as PHP FPM (\u201cfastCGI process manager\u201d) which will handle PHP files. To install the PHP and PHP FPM packages run the following command: sudo apt install -y php7.4-fpm Installing PHP Extension To run the system you need install some additional extensions. PHP extensions are available as packages and can be easily installed with. To install the required php extensions run the following command: sudo apt install -y php7.4-{mbstring,mysql,redis,igbinary,intl,gd,gmp,xml,curl,json,zip,bcmath} Installing MYSQL To install MYSQL go through every step describe in the link. MYSQL Installation Guide Installing Composer To install composer (PHP dependency manager) run the following command: sudo apt install -y composer Or you can follow the link: Composer Installation Guide Installing Redis Server To install Redis Server (In-memory key-value store) run the following command: sudo apt install -y redis-server If you need change the default option then follow this link Full Redis Installation Guide Installing Supervisor Supervisor is a process monitor for the Linux operating system, and will automatically restart your queue:work process if it fails. To install Supervisor on Ubuntu, you may use the following command: sudo apt install -y supervisor Installing NodeJS and NPM To install a different version of Node.js, you can use a PPA (personal package archive) maintained by NodeSource. First, we will install the PPA in order to get access to its packages. From your home directory, use curl to retrieve the installation script for your preferred version, making sure to replace 12.x with your preferred version string (if different). curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh sudo bash nodesource_setup.sh sudo apt install nodejs",
+            "title": "Server Installation"
+        },
+        {
+            "location": "server-installation.html#installation-process",
+            "text": "",
+            "title": "Installation Process"
+        },
+        {
+            "location": "server-installation.html#server-requirement",
+            "text": "Linux Server (Preferred Ubuntu 20.04) RAM 4GB Space 60GB Apache 2.4/Nginx Server (Preferred Nginx) PHP 7.4+ Database (Preferred MYSQL 5.7+) PHP Dependency Manager (Preferred Composer) Redis Server For Queue Management Process Control System (Preferred Supervisor) JavaScript Dependency Management (Preferred NPM) Note: The above server configuration is minimum requirement.",
+            "title": "Server Requirement"
+        },
+        {
+            "location": "server-installation.html#prerequisites-php-extension",
+            "text": "OpenSSL PHP Extension PDO PHP Extension Mbstring PHP Extension Tokenizer PHP Extension XML PHP Extension Ctype PHP Extension JSON PHP Extension Curl PHP extension GD PHP extension GMP PHP extension Intl PHP extension BCMath PHP Extension ZIP PHP extension MYSQL PHP extension Redis PHP extension",
+            "title": "Prerequisites PHP extension"
+        },
+        {
+            "location": "server-installation.html#server-installation",
+            "text": "Login to your server using ssh from your terminal. After successfully logged in follow every instructions down bellow. Note: You can install either apache ar nginx. Here we describe the nginx installation.",
+            "title": "Server Installation"
+        },
+        {
+            "location": "server-installation.html#installing-nginx-server",
+            "text": "Nginx is available in Ubuntu\u2019s default repositories, it is possible to install it from these repositories using the apt packaging system. Since this is our first interaction with the apt packaging system in this session, we will update our local package index so that we have access to the most recent package listings. Afterwards, we can install nginx: sudo apt update sudo apt install -y nginx When you have your server\u2019s IP address, enter it into your browser\u2019s address bar: You should see the default Nginx landing page http://your_server_ip To additional configuration, you need to go through the full installation process. Full Nginx Installation Guide",
+            "title": "Installing Nginx Server"
+        },
+        {
+            "location": "server-installation.html#installing-phpphp-fpm",
+            "text": "Unlike Apache, Nginx doesn\u2019t have a built in support for processing PHP files so we need to install a separate application such as PHP FPM (\u201cfastCGI process manager\u201d) which will handle PHP files. To install the PHP and PHP FPM packages run the following command: sudo apt install -y php7.4-fpm",
+            "title": "Installing PHP/PHP-FPM"
+        },
+        {
+            "location": "server-installation.html#installing-php-extension",
+            "text": "To run the system you need install some additional extensions. PHP extensions are available as packages and can be easily installed with. To install the required php extensions run the following command: sudo apt install -y php7.4-{mbstring,mysql,redis,igbinary,intl,gd,gmp,xml,curl,json,zip,bcmath}",
+            "title": "Installing PHP Extension"
+        },
+        {
+            "location": "server-installation.html#installing-mysql",
+            "text": "To install MYSQL go through every step describe in the link. MYSQL Installation Guide",
+            "title": "Installing MYSQL"
+        },
+        {
+            "location": "server-installation.html#installing-composer",
+            "text": "To install composer (PHP dependency manager) run the following command: sudo apt install -y composer Or you can follow the link: Composer Installation Guide",
+            "title": "Installing Composer"
+        },
+        {
+            "location": "server-installation.html#installing-redis-server",
+            "text": "To install Redis Server (In-memory key-value store) run the following command: sudo apt install -y redis-server If you need change the default option then follow this link Full Redis Installation Guide",
+            "title": "Installing Redis Server"
+        },
+        {
+            "location": "server-installation.html#installing-supervisor",
+            "text": "Supervisor is a process monitor for the Linux operating system, and will automatically restart your queue:work process if it fails. To install Supervisor on Ubuntu, you may use the following command: sudo apt install -y supervisor",
+            "title": "Installing Supervisor"
+        },
+        {
+            "location": "server-installation.html#installing-nodejs-and-npm",
+            "text": "To install a different version of Node.js, you can use a PPA (personal package archive) maintained by NodeSource. First, we will install the PPA in order to get access to its packages. From your home directory, use curl to retrieve the installation script for your preferred version, making sure to replace 12.x with your preferred version string (if different). curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh sudo bash nodesource_setup.sh sudo apt install nodejs",
+            "title": "Installing NodeJS and NPM"
+        },
+        {
+            "location": "Capbitex-installation.html",
+            "text": "Installation Process Required Credentials Pusher Credentials for live data Get Pusher Credential (Required when BROADCAST_DRIVER is pusher) SMTP Mail Server Credentials Mailgun Database Credentials Redis Server Credentials Capbitex is made on Laravel and the installation system is same as Laravel. See Laravel Installation Guide Note: Before installing Capbitex make sure all required software and PHP extensions are installed properly. Installing Capbitex Capbitex utilizes Composer to manage its dependencies. So, before using Capbitex, make sure you have Composer installed on your machine. To check you have correctly installed composer run composer --version to your server terminal. If you are not install composer yet then run sudo apt install -y composer to install composer. Unzip Capbitex project and put it into your server directory (For linux the server directory is /var/www/html ). After this go to your project directory and run composer install to download all the dependency. Directory Permissions After composer install, you may need to give some directory permissions. Directories within the storage , bootstrap/cache and resources/lang directories should be writable by your web server or Capbitex will not run. Example (for ubuntu. may vary for other linux distributions): sudo chown -R www-data:www-data bootstrap/cache sudo chown -R www-data:www-data storage sudo chown -R www-data:www-data resources/lang Nginx Configuration The default nginx configuration is not suitable for Capbitex. So you need to configure it. Open /etc/nginx/sites-available/default file with your favorite editor. Here we use vim . If vim is not install then run sudo apt install vim command or use vi instead of vim . To open run the following command: sudo vim /etc/nginx/sites-available/default Remove all from that file and copy & paste the following configuration. server { listen 80 default_server; server_name _; root /var/www/html/public; add_header X-Frame-Options \"SAMEORIGIN\"; add_header X-XSS-Protection \"1; mode=block\"; add_header X-Content-Type-Options \"nosniff\"; index index.php; charset utf-8; location / { try_files $uri $uri/ /index.php?$query_string; } location = /favicon-doc.ico { access_log off; log_not_found off; } location = /robots.txt { access_log off; log_not_found off; } error_page 404 /index.php; location ~ \\.php$ { fastcgi_pass unix:/var/run/php/php7.4-fpm.sock; fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name; include fastcgi_params; } location ~ /\\.(?!well-known).* { deny all; } } Save it and run nginx -t to check the configuration is correctly configured. If everythins id ok then restart the nginx server. To restart the server run the following command: sudo service nginx restart Environment Setup The next thing you should do is renaming the .env.example file to .env, After that you need to configure it. Generate Application Key Set your application key to a random string. Typically, this string should be 32 characters long. If the application key is not set, your user sessions and other encrypted data will not be secure! Follow the command below to generate the key php artisan key:generate Open .env file via your favorite text editor and configure it APP_NAME=\"My App\" # Your own exchange name APP_ENV=local # Change it to production once installation is done APP_KEY= # This will be generated by the command given above APP_DEBUG=true # Must be false in production mode APP_PROTOCOL=http # Which protocol you are using APP_URL=http://Capbitex.test # Your Web Url APP_INSTALLED=false # If don't want to install it vai web insteller then set it true APP_TIMEZONE=UTC # Set it to 'UTC' or any timezone you prefer LOG_CHANNEL=stack DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=homestead # Your database name DB_USERNAME=homestead # Your mysql username DB_PASSWORD=secret # Your mysql password CACHE_DRIVER=file # Supported cache driver: file, redis QUEUE_CONNECTION=redis # Supported queue driver: redis SESSION_DRIVER=file # Your session driver SESSION_LIFETIME=120 # Session life time in minute REDIS_HOST=127.0.0.1 REDIS_PASSWORD=null REDIS_PORT=6379 # Your Email Configuration MAIL_MAILER=smtp MAIL_HOST=smtp.mailtrap.io MAIL_PORT=2525 MAIL_USERNAME= MAIL_PASSWORD= MAIL_ENCRYPTION= MAIL_FROM_ADDRESS= # The sender email address MAIL_FROM_NAME= # The sender name BROADCAST_DRIVER=redis MIX_BROADCAST_DRIVER=\"${BROADCAST_DRIVER}\" MIX_BROADCAST_PORT=6001 #Laravel Echo Server Port # If you are using Laravel Echo Server then you can skip the pusher configuration PUSHER_APP_ID= PUSHER_APP_KEY= PUSHER_APP_SECRET= PUSHER_APP_CLUSTER= MIX_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\" MIX_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\" NOCAPTCHA_SECRET=secret-key NOCAPTCHA_SITEKEY=site-key Database Migration To make your mysql database ready you need to run following command. Before run this command make sure you have create the database and set it name in the .env file php artisan migrate Install initial Data To push initial data in database, run the following command. php artisan db:seed Note: The website won't run without initial data. To refresh the initial data in database after changing the seeders, run the following command (do not do it once you go live) php artisan migrate:fresh --seed Superadmin User Creation To create superadmin user you need to run the following command. This command will ask some user info. php artisan make:superadmin Create Symbolic Link For Storage To make them accessible from the web, you should create a symbolic link from public/storage to storage/app/public . To create the symbolic link, you may use the storage:link command. php artisan storage:link Note: This command will help you to visible your media files in your system. Test Data Seeding Note: Don't do run it on the production server. It is for testing purpose To run test data seed, first you need to configure Horizon . Otherwise it will throw an error. If you want to test you system with some test data you may run the following command it will add some test data for you. It may take sometimes to execute, wait for it until it finished. php artisan db:seed --class=TestSeeder Remove Capbitex Dev Dependencies To remove Capbitex dev dependencies run the following command. This will remove all packages that are not necessary in production. composer install --optimize-autoloader --no-dev Installing JavaScript Dependencies NPM offers an option which allows to only install app dependencies required for production environment. Use one of the following commands to skip the devDependencies in your package.json npm install --production Run the following command to build and minify the JavaScript files. npm run production",
+            "title": "Capbitex Installation"
+        },
+        {
+            "location": "Capbitex-installation.html#installation-process",
+            "text": "",
+            "title": "Installation Process"
+        },
+        {
+            "location": "Capbitex-installation.html#required-credentials",
+            "text": "Pusher Credentials for live data Get Pusher Credential (Required when BROADCAST_DRIVER is pusher) SMTP Mail Server Credentials Mailgun Database Credentials Redis Server Credentials Capbitex is made on Laravel and the installation system is same as Laravel. See Laravel Installation Guide Note: Before installing Capbitex make sure all required software and PHP extensions are installed properly.",
+            "title": "Required Credentials"
+        },
+        {
+            "location": "Capbitex-installation.html#installing-Capbitex",
+            "text": "Capbitex utilizes Composer to manage its dependencies. So, before using Capbitex, make sure you have Composer installed on your machine. To check you have correctly installed composer run composer --version to your server terminal. If you are not install composer yet then run sudo apt install -y composer to install composer. Unzip Capbitex project and put it into your server directory (For linux the server directory is /var/www/html ). After this go to your project directory and run composer install to download all the dependency.",
+            "title": "Installing Capbitex"
+        },
+        {
+            "location": "Capbitex-installation.html#directory-permissions",
+            "text": "After composer install, you may need to give some directory permissions. Directories within the storage , bootstrap/cache and resources/lang directories should be writable by your web server or Capbitex will not run. Example (for ubuntu. may vary for other linux distributions): sudo chown -R www-data:www-data bootstrap/cache sudo chown -R www-data:www-data storage sudo chown -R www-data:www-data resources/lang",
+            "title": "Directory Permissions"
+        },
+        {
+            "location": "Capbitex-installation.html#nginx-configuration",
+            "text": "The default nginx configuration is not suitable for Capbitex. So you need to configure it. Open /etc/nginx/sites-available/default file with your favorite editor. Here we use vim . If vim is not install then run sudo apt install vim command or use vi instead of vim . To open run the following command: sudo vim /etc/nginx/sites-available/default Remove all from that file and copy & paste the following configuration. server { listen 80 default_server; server_name _; root /var/www/html/public; add_header X-Frame-Options \"SAMEORIGIN\"; add_header X-XSS-Protection \"1; mode=block\"; add_header X-Content-Type-Options \"nosniff\"; index index.php; charset utf-8; location / { try_files $uri $uri/ /index.php?$query_string; } location = /favicon-doc.ico { access_log off; log_not_found off; } location = /robots.txt { access_log off; log_not_found off; } error_page 404 /index.php; location ~ \\.php$ { fastcgi_pass unix:/var/run/php/php7.4-fpm.sock; fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name; include fastcgi_params; } location ~ /\\.(?!well-known).* { deny all; } } Save it and run nginx -t to check the configuration is correctly configured. If everythins id ok then restart the nginx server. To restart the server run the following command: sudo service nginx restart",
+            "title": "Nginx Configuration"
+        },
+        {
+            "location": "Capbitex-installation.html#environment-setup",
+            "text": "The next thing you should do is renaming the .env.example file to .env, After that you need to configure it.",
+            "title": "Environment Setup"
+        },
+        {
+            "location": "Capbitex-installation.html#generate-application-key",
+            "text": "Set your application key to a random string. Typically, this string should be 32 characters long. If the application key is not set, your user sessions and other encrypted data will not be secure! Follow the command below to generate the key php artisan key:generate Open .env file via your favorite text editor and configure it APP_NAME=\"My App\" # Your own exchange name APP_ENV=local # Change it to production once installation is done APP_KEY= # This will be generated by the command given above APP_DEBUG=true # Must be false in production mode APP_PROTOCOL=http # Which protocol you are using APP_URL=http://Capbitex.test # Your Web Url APP_INSTALLED=false # If don't want to install it vai web insteller then set it true APP_TIMEZONE=UTC # Set it to 'UTC' or any timezone you prefer LOG_CHANNEL=stack DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=homestead # Your database name DB_USERNAME=homestead # Your mysql username DB_PASSWORD=secret # Your mysql password CACHE_DRIVER=file # Supported cache driver: file, redis QUEUE_CONNECTION=redis # Supported queue driver: redis SESSION_DRIVER=file # Your session driver SESSION_LIFETIME=120 # Session life time in minute REDIS_HOST=127.0.0.1 REDIS_PASSWORD=null REDIS_PORT=6379 # Your Email Configuration MAIL_MAILER=smtp MAIL_HOST=smtp.mailtrap.io MAIL_PORT=2525 MAIL_USERNAME= MAIL_PASSWORD= MAIL_ENCRYPTION= MAIL_FROM_ADDRESS= # The sender email address MAIL_FROM_NAME= # The sender name BROADCAST_DRIVER=redis MIX_BROADCAST_DRIVER=\"${BROADCAST_DRIVER}\" MIX_BROADCAST_PORT=6001 #Laravel Echo Server Port # If you are using Laravel Echo Server then you can skip the pusher configuration PUSHER_APP_ID= PUSHER_APP_KEY= PUSHER_APP_SECRET= PUSHER_APP_CLUSTER= MIX_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\" MIX_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\" NOCAPTCHA_SECRET=secret-key NOCAPTCHA_SITEKEY=site-key",
+            "title": "Generate Application Key"
+        },
+        {
+            "location": "Capbitex-installation.html#database-migration",
+            "text": "To make your mysql database ready you need to run following command. Before run this command make sure you have create the database and set it name in the .env file php artisan migrate",
+            "title": "Database Migration"
+        },
+        {
+            "location": "Capbitex-installation.html#install-initial-data",
+            "text": "To push initial data in database, run the following command. php artisan db:seed Note: The website won't run without initial data. To refresh the initial data in database after changing the seeders, run the following command (do not do it once you go live) php artisan migrate:fresh --seed",
+            "title": "Install initial Data"
+        },
+        {
+            "location": "Capbitex-installation.html#superadmin-user-creation",
+            "text": "To create superadmin user you need to run the following command. This command will ask some user info. php artisan make:superadmin",
+            "title": "Superadmin User Creation"
+        },
+        {
+            "location": "Capbitex-installation.html#create-symbolic-link-for-storage",
+            "text": "To make them accessible from the web, you should create a symbolic link from public/storage to storage/app/public . To create the symbolic link, you may use the storage:link command. php artisan storage:link Note: This command will help you to visible your media files in your system.",
+            "title": "Create Symbolic Link For Storage"
+        },
+        {
+            "location": "Capbitex-installation.html#test-data-seeding",
+            "text": "Note: Don't do run it on the production server. It is for testing purpose To run test data seed, first you need to configure Horizon . Otherwise it will throw an error. If you want to test you system with some test data you may run the following command it will add some test data for you. It may take sometimes to execute, wait for it until it finished. php artisan db:seed --class=TestSeeder",
+            "title": "Test Data Seeding"
+        },
+        {
+            "location": "Capbitex-installation.html#remove-Capbitex-dev-dependencies",
+            "text": "To remove Capbitex dev dependencies run the following command. This will remove all packages that are not necessary in production. composer install --optimize-autoloader --no-dev",
+            "title": "Remove Capbitex Dev Dependencies"
+        },
+        {
+            "location": "Capbitex-installation.html#installing-javascript-dependencies",
+            "text": "NPM offers an option which allows to only install app dependencies required for production environment. Use one of the following commands to skip the devDependencies in your package.json npm install --production Run the following command to build and minify the JavaScript files. npm run production",
+            "title": "Installing JavaScript Dependencies"
+        }
+    ]
+}
